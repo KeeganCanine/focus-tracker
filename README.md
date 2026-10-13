@@ -30,3 +30,24 @@ Data stays in localStorage on the device/browser where it is recorded. It does n
 
 ## Planned additions
 Google Calendar integration, cloud sync, editable history, session recovery, and goals.
+
+
+## Version 1.1
+- Task checklist: add, check off, and delete tasks. Tasks are saved on this device.
+- Activity category chips turn red on hover/focus and reveal an × removal indicator. Tap to remove, then confirm. On touchscreens the × stays visible.
+- Removing a category does not erase previously recorded sessions. The category in an active timer cannot be removed.
+- Google Calendar integration is reserved for a later version.
+
+To update an existing GitHub Pages site, upload the changed project files to the same repository and commit. The service worker cache version is bumped so installed apps can receive the update.
+
+
+## v1.2: Time goals and alerts
+- Each activity can have independent **per-session** and **daily cumulative** minute targets. Enter `0` to disable.
+- The progress bars update while a timer runs, including across pauses. Completed sessions contribute to the daily total.
+- When a target is reached, an in-app banner appears and an optional sound plays. Sound playback depends on browser permissions and audio restrictions.
+- Alerts require the app to be open and running. **They are not iPhone lock-screen push notifications.** The app cannot guarantee delivery if Safari or the PWA is suspended or closed.
+- Goal preferences and daily notification flags are saved in the existing local storage record, preserving prior categories, sessions, and checklist tasks.
+- Future background push notifications require a server-side push provider, user permission, and an installed Home Screen PWA on supported iOS versions. Do not put push credentials in this public repository.
+
+### Updating an existing installation
+Upload all project files to the root of your existing GitHub repository. The service worker cache version has been increased. After GitHub Pages deploys, reopen the Home Screen app; if an older version persists, fully close and reopen it.
